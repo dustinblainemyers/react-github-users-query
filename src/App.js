@@ -7,8 +7,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {userName: '',
-                  users: []
-                 
+                  users: [],
+                  apiResults: {}
                  };
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -30,14 +30,22 @@ class App extends Component {
 
     fetch(`https://api.github.com/users/${previousInput}`)
       .then(res => res.json())
+
       .then((result) => {
-         
+         console.log("result", result)
+         const apiTest = [...this.state.users, result]
+    
           this.setState({
               userName: '',
-              users: [...this.state.users, [result]]
+              users: apiTest
+              
           });
 
-      });
+      })
+
+      console.log('api result', this.state.apiResults)
+
+      
 
       
   }
@@ -53,7 +61,7 @@ class App extends Component {
           onChange={this.handleChange}
         />
         <input type="submit" value="Submit" />
-        <p>{this.state.users}</p>
+        
       </form>
     )
   }
