@@ -6,8 +6,8 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = {value: '',
-                  userArray: []
+    this.state = {userName: '',
+                  users: []
                  
                  };
     this.handleChange = this.handleChange.bind(this)
@@ -18,7 +18,7 @@ class App extends Component {
   handleChange(event) {
 
     
-    this.setState({ value: event.target.value
+    this.setState({ userName: event.target.value
                     
                     })
   }
@@ -26,10 +26,10 @@ class App extends Component {
    handleSubmit(event) {
     
     event.preventDefault()
-    const previousInput = this.state.value;
+    const previousInput = this.state.userName;
     this.setState({ 
       value: '',
-      userArray: [...this.state.userArray, previousInput]
+      users: [...this.state.users, previousInput]
       
       })
 
@@ -44,11 +44,11 @@ class App extends Component {
       <form onSubmit={this.handleSubmit}>
         <input
           type="text"
-          value={this.state.username}
+          value={this.state.userName}
           onChange={this.handleChange}
         />
         <input type="submit" value="Submit" />
-        <p>{this.state.userArray}</p>
+        <p>{this.state.users}</p>
       </form>
     )
   }
