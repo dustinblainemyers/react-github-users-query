@@ -9,6 +9,7 @@ const UserCardList = props => {
   return (
     <Collapsible accordion>
       {users.length > 0 ? (
+        console.log("user data",userData)
         userData.map((user,index) => (
             <CollapsibleItem 
                 key={index}

@@ -9,6 +9,7 @@ class UserCard extends Component {
 
     render(){
             const users = this.props.users;
+            console.log("usercard props", this.props.users)
         
        return (
         <div className='usercard'> 
