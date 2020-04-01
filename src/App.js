@@ -26,15 +26,20 @@ class App extends Component {
    handleSubmit(event) {
     
     event.preventDefault()
-    const previousInput = this.state.userName;
-    this.setState({ 
-      value: '',
-      users: [...this.state.users, previousInput]
+    const previousInput = this.state.userName
+
+    fetch(`https://api.github.com/users/${previousInput}`)
+      .then(res => res.json())
+      .then((result) => {
+         
+          this.setState({
+              userName: '',
+              users: [...this.state.users, [result]]
+          });
+
+      });
+
       
-      })
-
-       
-
   }
 
 
