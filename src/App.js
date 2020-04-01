@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import UserCardList from './components/UserCard'
 import './App.css';
 
 
@@ -32,7 +32,7 @@ class App extends Component {
       .then(res => res.json())
 
       .then((result) => {
-         console.log("result", result)
+         
          const apiTest = [...this.state.users, result]
     
           this.setState({
@@ -43,8 +43,7 @@ class App extends Component {
 
       })
 
-      console.log('api result', this.state.apiResults)
-
+    
       
 
       
@@ -53,7 +52,10 @@ class App extends Component {
 
 
   render() {
+    console.log('what app is passing', this.state.users)
+
     return (
+    <div>
       <form onSubmit={this.handleSubmit}>
         <input
           type="text"
@@ -63,6 +65,9 @@ class App extends Component {
         <input type="submit" value="Submit" />
         
       </form>
+      
+      <UserCardList users={ this.state.users}/>
+    </div>
     )
   }
 }
