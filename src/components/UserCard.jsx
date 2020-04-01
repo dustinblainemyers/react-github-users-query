@@ -19,7 +19,7 @@ class UserCard extends Component {
             
         ))
       ) : (
-        <li>No User Data</li>
+        <></>
       )}
        </div>
        )
