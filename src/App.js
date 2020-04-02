@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import UserCardList from './components/UserCard'
+import UserCardList from './components/UserCardList'
 import './App.css';
 
 
@@ -52,7 +52,7 @@ class App extends Component {
 
 
   render() {
-    console.log('what app is passing', this.state.users)
+    
 
     return (
     <div>

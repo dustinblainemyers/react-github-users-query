@@ -1,16 +1,16 @@
 import React from 'react';
 import UserCard from './UserCard';
-// import { Collapsible , CollapsibleItem } from 'react-materialize';
+import { Collapsible , CollapsibleItem } from 'react-materialize';
 
 
 const UserCardList = props => {
   const { users } = props;
-  console.log("data passed into userCardList", users)
+  console.log("data passed into userCardList", props)
   return (
     <Collapsible accordion>
       {users.length > 0 ? (
-        console.log("user data",userData)
-        userData.map((user,index) => (
+        
+        users.map((user,index) => (
             <CollapsibleItem 
                 key={index}
                 expanded={false}
@@ -18,7 +18,7 @@ const UserCardList = props => {
                 
                 node="div"
             >
-                <UserCard user={user}/>
+                <p>{user.login}</p>
             </CollapsibleItem>
         ))
       ) : (

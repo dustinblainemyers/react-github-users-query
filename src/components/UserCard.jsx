@@ -9,19 +9,14 @@ class UserCard extends Component {
 
     render(){
             const users = this.props.users;
-            console.log("usercard props", this.props.users)
-        
+            
+        console.log("user", users)
        return (
         <div className='usercard'> 
-           {users.length > 0 ? (
-        users.map((user,index) => (
-            
-            <p>{user.login}</p>
-            
-        ))
-      ) : (
-        <></>
-      )}
+          
+          
+         
+       
        </div>
        )
     }
