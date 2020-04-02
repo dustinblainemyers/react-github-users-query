@@ -20,6 +20,7 @@ class UserCard extends Component {
             
             
             <p>{user.login}</p>
+            <img src={user.avatar_url} alt="Github User"/>
             
            
          
