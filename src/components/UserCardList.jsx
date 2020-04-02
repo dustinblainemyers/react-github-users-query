@@ -5,7 +5,7 @@ import { Collapsible , CollapsibleItem } from 'react-materialize';
 
 const UserCardList = props => {
   const { users } = props;
-  console.log("data passed into userCardList", props)
+  
   return (
     <Collapsible accordion>
       {users.length > 0 ? (
@@ -18,7 +18,7 @@ const UserCardList = props => {
                 
                 node="div"
             >
-                <p>{user.login}</p>
+                <UserCard user={user}/>
             </CollapsibleItem>
         ))
       ) : (

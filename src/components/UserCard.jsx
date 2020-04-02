@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 class UserCard extends Component {
 
 
@@ -8,17 +9,29 @@ class UserCard extends Component {
     
 
     render(){
-            const users = this.props.users;
+            const user = this.props.user;
             
-        console.log("user", users)
-       return (
-        <div className='usercard'> 
-          
-          
+        console.log("user", user)
+
+       if(!!user.login) {
+        return (
+          <div className='usercard'> 
+           
+            
+            
+            <p>{user.login}</p>
+            
+           
          
-       
-       </div>
+         </div>
+         )
+
+       }
+
+       return (
+         <p>User Not Found</p>
        )
+      
     }
 }
 
