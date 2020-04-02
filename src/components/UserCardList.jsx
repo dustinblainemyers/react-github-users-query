@@ -1,12 +1,14 @@
 import React from 'react';
 import UserCard from './UserCard';
 import { Collapsible , CollapsibleItem } from 'react-materialize';
+import TestStyle from './TestStyle'
 
 
 const UserCardList = props => {
   const { users } = props;
   
   return (
+    <TestStyle>
     <Collapsible accordion>
       {users.length > 0 ? (
         
@@ -25,6 +27,7 @@ const UserCardList = props => {
         <li>No User Data</li>
       )}
     </Collapsible>
+    </TestStyle>
   );
 };
 
